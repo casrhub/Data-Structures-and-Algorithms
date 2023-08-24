@@ -55,10 +55,16 @@ int main (){
     int num;
     inputFile >> num;
     inputFile.close();
+    if(num >= 0){
+        cout << "La suma de 1 hasta " << num << " de manera iterativa es: " << sumaIterativa(num) <<endl;
+        cout << "La suma de 1 hasta " << num << " de manera recursiva es: " << sumaRecursiva(num) <<endl;
+        cout << "La suma de 1 hasta " << num << " de manera directa es: " << sumaDirecta(num) <<endl;
 
-    cout << "La suma de 1 hasta " << num << " de manera iterativa es: " << sumaIterativa(num) <<endl;
-    cout << "La suma de 1 hasta " << num << " de manera recursiva es: " << sumaRecursiva(num) <<endl;
-    cout << "La suma de 1 hasta " << num << " de manera directa es: " << sumaDirecta(num) <<endl;
+
+    }else {
+        cout << "Porfavor ingrese un entero positivo en el .txt" << endl;
+    } 
+    
 
      
 }
