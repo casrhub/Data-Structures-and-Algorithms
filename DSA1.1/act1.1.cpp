@@ -35,7 +35,7 @@ int sumaRecursiva(int n){
     }
     else return n + sumaRecursiva(n-1);
 }
-// Forma matematica de resolverlo 
+// Forma matematica de resolverlo  O(1)
 int sumaDirecta(int n){
     if ( n > 0){
         return n * (n + 1)/2;
@@ -47,26 +47,27 @@ int sumaDirecta(int n){
 }
 
 int main (){
-    ifstream inputFile("ns.txt");
-    if (!inputFile.is_open()){
-        cerr << "No existe un archivo de lectura" << endl;
-        return 1; 
+    ifstream myFile;
+    myFile.open("ns.txt");
+    if (myFile.is_open()) {
+        int num;
+        while (myFile >> num) {
+            if (num >= 0) {
+                cout << "---------------------------------------------------" << endl;
+                cout << "La suma de 1 hasta " << num << " de manera iterativa es: " << sumaIterativa(num) << endl;
+                cout << "La suma de 1 hasta " << num << " de manera recursiva es: " << sumaRecursiva(num) << endl;
+                cout << "La suma de 1 hasta " << num << " de manera directa es: " << sumaDirecta(num) << endl;
+            } else {
+                cout << "---------------------------------------------------" << endl;
+                cout << "Se ingreso el número negativo "<< num << " .Por favor ingrese un entero positivo en el archivo." << endl;
+            }
+        }
+        myFile.close();
     }
-    int num;
-    inputFile >> num;
-    inputFile.close();
-    if(num >= 0){
-        cout << "La suma de 1 hasta " << num << " de manera iterativa es: " << sumaIterativa(num) <<endl;
-        cout << "La suma de 1 hasta " << num << " de manera recursiva es: " << sumaRecursiva(num) <<endl;
-        cout << "La suma de 1 hasta " << num << " de manera directa es: " << sumaDirecta(num) <<endl;
 
-
-    }else {
-        cout << "Porfavor ingrese un entero positivo en el .txt" << endl;
-    } 
-    
-
-     
+    return 0;
+ 
+ 
 }
 
 
