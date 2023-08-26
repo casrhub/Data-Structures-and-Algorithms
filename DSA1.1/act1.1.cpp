@@ -1,4 +1,4 @@
-// Cálculo de sumatoria de forma iterativa 
+// Cálculo de sumatorias hasta n utilizando recursividad, iteración y suma directa  
 
 // Problema: Calcular la suma desde 1 hasta un numero determinado n 
 //Input: número entero positivo 
@@ -9,17 +9,13 @@
 // Output: 6
 // 1 + 2 + 3 = 6
 
-// Steps: 
-// 1. While condition to check if n is valid 
-// 2. While its true sum the current value of n + the next 
-
 #include <iostream>
 #include <fstream>
 using namespace std; 
 
 // Imaginarse este for como un array creado aparte, es decir no se itera sobre n si no que se itera
 // Utilizando n 
-int sumaIterativa (int n){
+int sumaIterativa (int n){ // O(n)
     int sum = 0;
     for (int i = 1; i <= n ; i++){
         sum += i;
@@ -29,7 +25,7 @@ int sumaIterativa (int n){
 
 // Son niveles imaginarse una forma "iterativa" en la que n va disminuyendo 
 
-int sumaRecursiva(int n){
+int sumaRecursiva(int n){ //O(n)
     if (n <= 0){
         return 0;
     }
