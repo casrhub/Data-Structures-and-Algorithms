@@ -16,3 +16,24 @@ int bubbleSort(std::vector<int>& a, int n){
     }
     return comparisons;
 }
+
+
+std::vector<int> bubbleSortVector(std::vector<int> input) {
+    int n = input.size();
+    bool swapped;
+
+    do {
+        swapped = false;
+
+        for (int i = 0; i < n - 1; i++) {
+            if (input[i] > input[i + 1]) {
+                // Swap elements if they are in the wrong order
+                std::swap(input[i], input[i + 1]);
+                swapped = true;
+            }
+        }
+    } while (swapped);
+
+    return input;
+}
+

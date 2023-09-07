@@ -1,15 +1,15 @@
 #include <iostream>
 #include <vector>
+#include "globals.h"
 
-std::pair<int, int> busquedaSecuencial(std::vector<int>& v, int dato) {
-    int comparaciones = 0;
+// Esta busqueda fue utilzada para sacar los indexes por eso retorna posiciones
+
+int busquedaSecuencial(std::vector<int>& v, int dato) {
     for (int i = 0; i < v.size(); i++) {
-        comparaciones++;
+        comparacionesGlobales++;
         if (v[i] == dato) {
-            return std::make_pair(i, comparaciones);
+            return i; 
         }
-    }
-    // Si no se encontró el número, devolvemos -1 como posición y el número de comparaciones
-    return std::make_pair(-1, comparaciones);
+    
+    return -1;
 }
-

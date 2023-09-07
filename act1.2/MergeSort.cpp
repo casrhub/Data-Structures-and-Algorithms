@@ -1,49 +1,68 @@
 #include <iostream>
-#include <vector>
 
 // Merge function to merge two sorted vectors and count comparisons
-int merge(std::vector<int>& arr, std::vector<int>& left, std::vector<int>& right) {
-    int i = 0, j = 0, k = 0;
-    int comparisons = 0; // Initialize comparison count
+#include <iostream>
+#include <vector>
 
-    while (i < left.size() && j < right.size()) {
-        comparisons++; // Increment comparison count
-        if (left[i] <= right[j]) {
-            arr[k++] = left[i++];
+int merge(std::vector<int>& vect, int inicio, int medio, int fin) {
+    int comparaciones = 0;
+
+    int n1 = medio - inicio + 1;
+    int n2 = fin - medio;
+
+    std::vector<int> izq(n1);
+    std::vector<int> der(n2);
+
+    for (int i = 0; i < n1; i++) {
+        izq[i] = vect[inicio + i];
+    }
+    for (int i = 0; i < n2; i++) {
+        der[i] = vect[medio + 1 + i];
+    }
+
+    int i = 0;
+    int j = 0;
+    int k = inicio;
+
+    while (i < n1 && j < n2) {
+        if (izq[i] <= der[j]) {
+            vect[k] = izq[i];
+            i++;
         } else {
-            arr[k++] = right[j++];
+            vect[k] = der[j];
+            j++;
         }
-    }
-    while (i < left.size()) {
-        arr[k++] = left[i++];
-    }
-    while (j < right.size()) {
-        arr[k++] = right[j++];
+
+        k++;
+        comparaciones++;
     }
 
-    return comparisons;
+    while (i < n1) {
+        vect[k] = izq[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        vect[k] = der[j];
+        j++;
+        k++;
+    }
+
+    return comparaciones;
 }
 
-// Recursive Merge Sort function to sort the vector and count comparisons
-int recursiveMergeSort(std::vector<int>& arr) {
-    int size = arr.size();
-    if (size <= 1) {
-        return 0; // No comparisons needed for an empty vector or a single element
+int mergeSort(std::vector<int>& vect, int inicio, int fin) {
+    int comparaciones = 0;
+
+    if (inicio < fin) {
+        int medio = inicio + (fin - inicio) / 2;
+
+        comparaciones += mergeSort(vect, inicio, medio);
+        comparaciones += mergeSort(vect, medio + 1, fin);
+
+        comparaciones += merge(vect, inicio, medio, fin);
     }
-    int mid = size / 2;
 
-    // Split the vector into left and right halves
-    std::vector<int> left(arr.begin(), arr.begin() + mid);
-    std::vector<int> right(arr.begin() + mid, arr.end());
-
-    // Recursively sort the left and right halves and get their comparison counts
-    int leftComparisons = recursiveMergeSort(left);
-    int rightComparisons = recursiveMergeSort(right);
-
-    // Merge the sorted halves back and count comparisons
-    int mergeComparisons = merge(arr, left, right);
-
-    // Return the total comparison count
-    return leftComparisons + rightComparisons + mergeComparisons;
+    return comparaciones;
 }
-
