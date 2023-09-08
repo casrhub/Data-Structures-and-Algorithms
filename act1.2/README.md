@@ -28,3 +28,8 @@ cual hace que sea bastante eficiente para buscar elementos en vectores arreglado
 * Busqueda Secuencial: En este algoritmo tenemos una complejidad de O(n) ya que contamos con solo un ciclo for
 dependiente de la cantidad de elementos del vector n, este for itera csobre cada elemento del vector donde ene el 
 peor de los casos el número a buscar se encotrara al final del vetor lo que resulta en una complejidad lineal O(n) 
+
+
+![Mi pato](pueba.png)
+
+
