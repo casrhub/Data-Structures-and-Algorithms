@@ -1,21 +1,27 @@
-#pragma once
 #include <vector>
+using namespace std;
 
-int bubbleSort(std::vector<int>& a, int n){
-    int comparisons = 0;
-    int tmp = 0;
-    for(int i = 0; i < n-1; i++){
-        for(int j = 0; j < n-1-i; j++){
-            comparisons++;
-            if(a[j+1]<a[j]){
-                tmp = a[j];
-                a[j] = a[j+1];
-                a[j+1] = tmp;
+int bubbleSort(std::vector<int>& vect, int numDatos)
+{
+    int n = numDatos;
+    int comparaciones = 0;
+    bool interruptor = true;
+    for (int i = 0; i < n - 1 && interruptor; i++) {
+        interruptor = false;
+        for (int j = 0; j < n - 1 - i; j++) {
+            comparaciones++;
+            if (vect[j + 1] < vect[j]) {
+                int aux = vect[j];
+                vect[j] = vect[j + 1];
+                vect[j + 1] = aux;
+                interruptor = true;
             }
         }
     }
-    return comparisons;
+    
+    return comparaciones;
 }
+
 
 
 std::vector<int> bubbleSortVector(std::vector<int> input) {
