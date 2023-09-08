@@ -30,6 +30,5 @@ dependiente de la cantidad de elementos del vector n, este for itera csobre cada
 peor de los casos el número a buscar se encotrara al final del vetor lo que resulta en una complejidad lineal O(n) 
 
 
-![Mi pato](pueba.png)
 
 
