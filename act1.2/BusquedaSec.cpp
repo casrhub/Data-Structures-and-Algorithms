@@ -11,5 +11,6 @@ int busquedaSecuencial(std::vector<int>& v, int dato) {
             return i; 
         }
     
+    }
     return -1;
 }

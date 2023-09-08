@@ -21,7 +21,7 @@ int main(){
     inputFile >> numElementosOrdenar;
     //std::cout << "El número de elementos a ordenar es: " << numElementosOrdenar << std::endl;
 
-// Lectura de elemntos del vector de numeros a ordenar y print de ellos
+// Lectura de elemntos del vector de numeros a ordenar 
     std::vector<int> numbers;
 
     for (int i = 0; i < numElementosOrdenar; i++ ){
@@ -30,66 +30,32 @@ int main(){
             numbers.push_back(number);
         }
     }
+    // vector reasignado para bubble Sort 
 
     vector<int> prueba = numbers;
-    // std::cout << "Los elementos del vector son:";
-    // for (int i = 0; i < numbers.size(); i++) {
-    // std::cout << " " << numbers[i];
-    // }
-    // std::cout << std::endl;
 
 
-    // Uso funciones de ordenamiento en vector (numbers)
-    //std::cout << "Los numeros de comparaciones de ordeanmiento de bubbleSort, Intercambio y Merge son: " << std::endl;
-    //std::cout << bubbleSort(numbers, numElementosOrdenar)  << " " << ordenamientoIntercambio(numbers) << " "<< mergeSort(numbers,0,numbers.size()-1,comparaciones) << std::endl;    
-
-
-    int numElementosBuscar; // Cantidad de elementos a buscar
+// Elementos a buscar 
+    int numElementosBuscar; 
     inputFile >> numElementosBuscar;
-    //std::cout << "El contenido del vector de elementos a ordenar es: " << numElementosBuscar << std::endl;
-
-// Lectura de elemntos del vector y print de ellos
+// Lectura de elemntos del vector a buscar
     std::vector<int> numbersToSearch;
-
     for (int i = 0; i < numElementosBuscar; i++ ){
         int number;
         if (inputFile >> number){
             numbersToSearch.push_back(number);
         }
     }
-
-    // std::cout << "El contenido del vector de elementos a bucscar es: ";
-    // for (int i = 0; i < numbersToSearch.size(); i++) {
-    // std::cout << " " << numbersToSearch[i];
-    // }
-    // std::cout << std::endl;
-
-    // Funcion para return de vector ordenado:
+    //vector ordenado con bubble
     std::vector<int> sortedNumbers = bubbleSortVector(numbers);
 
-    
-
-   // Busqueda de numeros del vector sortedNumbers
-
-//   for (int i = 0; i < numbersToSearch.size(); i++) {
-//     int elementToSearch = numbersToSearch[i];
-//     int indexes = busquedaSecuencial(sortedNumbers, elementToSearch);
-//     int comparacionesBinarias = busquedaBin(sortedNumbers, elementToSearch);
-//     //La linea de abajo imprime el index del numero, numero de comparaciones hechas con busqueda Secuenciual y comparaciones hechas con
-//     //std::cout << "El index del elemento: " << elementToSearch << " es: " << indexes << " Numero de comparaciones con busqueda secuencial: " << comparacionesGlobales << " Número de comparaciones con Binary Search: " << comparacionesBinarias<<std::endl;
-//     comparacionesGlobales = 0;
-//}
-
-
-// Info en un output.txt como lo pide el profe
-
- // Open the output file for writing
+ // Apertura de archivo output.txt
     std::ofstream outputFile("output.txt");
 
     if (outputFile.is_open()) {
 
-        
-        // Indez, comparaciones secuenciales y comparaciones binarias
+        // Comparaciones de ordenamiento
+        // comparaciones de Intercambio, comparaciones de Bubble, comparaciones mergre sort
         int contadores = 0;
         ordenaMerge(numbers, 0, numbers.size() - 1, contadores);
         outputFile << ordenamientoIntercambio(numbers)  << " " <<bubbleSort(prueba, prueba.size())<< " " << contadores << std::endl;
@@ -98,16 +64,12 @@ int main(){
             int indexes = busquedaSecuencial(sortedNumbers, elementToSearch);
             int comparacionesBinarias = busquedaBin(sortedNumbers, elementToSearch);
             
-            // Escritura en output.txt
+            // Indexes, comparaciones con buesqueda secuencial, comparaciones con busqueda binaria.
             outputFile <<  indexes << " " << comparacionesGlobales << " " << comparacionesBinarias << std::endl;
             
             comparacionesGlobales = 0;
         }
-        std::cout << " " <<std::endl;
         std::cout << "Los resultados se han guardado en output.txt " <<std::endl;
-    
-
-        // Close the output file
         outputFile.close();
     } else {
         std::cerr << "Unable to open output file." << std::endl;
