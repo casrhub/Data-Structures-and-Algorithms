@@ -29,6 +29,15 @@ cual hace que sea bastante eficiente para buscar elementos en vectores arreglado
 dependiente de la cantidad de elementos del vector n, este for itera csobre cada elemento del vector donde ene el 
 peor de los casos el número a buscar se encotrara al final del vetor lo que resulta en una complejidad lineal O(n) 
 
+### Casos Prueba
+Input
+![Input pic](Inpt.png)
+
+
+
+Output
+![Output pic](output.png)
+
 
 
 

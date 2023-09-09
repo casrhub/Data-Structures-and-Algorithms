@@ -10,7 +10,7 @@
 #include "binarySearch.cpp"
 #include "globals.h"
 
-
+// Complejidad temporal de cada algortimo explicada en la parte de abajo 
 int comparacionesGlobales = 0;
 
 
