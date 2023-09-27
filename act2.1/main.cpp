@@ -97,7 +97,7 @@ int main ()
     head ->value = 1; // primer valor = 1  
     head ->next = NULL; // Apunta a null ya que no existe un nuevo elemento al cual apuntar
     // CREATE
-    std::cout << "Creacion de elemntos, principio, en medio, final" << std::endl; 
+    std::cout << "Creacion de datos, principio, en medio, final" << std::endl; 
     // Insertar al principio
     insertFront (&head, 696); // la función recibe la dirección de la cabeza y el valor a insertar
     // Insertar al final 
@@ -107,6 +107,7 @@ int main ()
     // Insertar en medio 
     insertGivenNode(head,22);
     // READ
+    std::cout << "Busqeda de datos" << std::endl;
     search(head, 696);
     // UPDATE
     printL(head);
@@ -115,6 +116,7 @@ int main ()
     updateData(head, 420, 555);
     printL(head);
     // DELETE
+    std::cout << " " << std::endl;
     std::cout << "Eliminacion de datos" <<std::endl;
     std::cout << "---------------------------principio" <<std::endl;
     head = head->next;
