@@ -60,7 +60,7 @@ class Stack { // clase Stack
     void Top (){
         Node* current = top;
         while (current != nullptr ){
-            std::cout << "El elemento hasata arriba del stack es: " << current->data << std::endl;
+            std::cout << "El elemento hasta arriba del stack es: " << current->data << std::endl;
             current = nullptr;
         }
     }
