@@ -24,7 +24,6 @@ class Stack { // clase Stack
             std::cout << "El stack esta lleno" << std::endl;
         }
         return size >= max_size;
-        
     }
     bool isEmpty (){
         if (size == 0){
@@ -48,21 +47,21 @@ class Stack { // clase Stack
             std::cout << "El stack esta vacío, métele valores con push()" << std::endl;
             return;
         }
-
         Node* temp = top;
         top = top->next;
         std::cout << "Se ha popeado el elemnto: " << temp->data << std::endl;
         delete temp;
-        size--;
-        
+        size--;  
     }
 
     void Top (){
-        Node* current = top;
-        while (current != nullptr ){
-            std::cout << "El elemento hasta arriba del stack es: " << current->data << std::endl;
-            current = nullptr;
+        if (size == 0){
+            std::cout << "El stack esta vacio." << std::endl;
+            return;
         }
+
+        std::cout << "El elemento hasta arriba del stack es: " << top->data <<std::endl;
+       
     }
 
     void printStack (){
@@ -82,7 +81,6 @@ int main()
 {
     // El stack se lee como si fuera una torre, el elemnto hasta arriba es el último elemento agregado mientras
     // que el de hasta abajo fue el primer elemento agregado
-
     Stack stack(5);
     // push() 
     stack.push(3);
@@ -104,9 +102,5 @@ int main()
     stack.pop();
     // isEmpty()
     stack.isEmpty();
-
-   
-
-
 }
 
