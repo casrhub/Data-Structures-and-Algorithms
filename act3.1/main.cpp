@@ -69,13 +69,13 @@ bool findAncestors(Node* root, int target, std::vector<int>& ancestors) {
 
 
 // Función para realizar un recorrido preorder en el BST
-void preorderTraversal(Node* root) {
-    if (root == nullptr) {
+void preorderTraversal(Node* root) { // En el primer llamdo root representa a la raiz, en los demás representa el nodo actual 
+    if (root == nullptr) { 
         return;
     }
     std::cout << root->data << " "; // Procesar el nodo actual
     preorderTraversal(root->left);  // Recorrer el subárbol izquierdo
-    preorderTraversal(root->right); // Recorrer el subárbol derecho
+    preorderTraversal(root->right); // Recorrer el subárbol derecho una vez que el 
 }
 
 // Función para realizar un recorrido inorder en el BST
@@ -145,36 +145,39 @@ void performTraversal(Node* root, int choice) {
 }
 
 int main() {
-    // Crear un ejemplo de BST:
-    //        4
-    //       / \
-    //      2   6
-    //     / \   \
-    //    1   3   7
+    // Ejemplo de BST de 3 niveles:
+    //         420
+    //       /    \
+    //      69     6
+    //     / \   /  \
+    //    1   3  5   7
 
 // Creación de BST
-    Node* root = createNode(4);
-    root->left = createNode(2);
+    Node* root = createNode(420);
+
+    root->left = createNode(69);
     root->right = createNode(6);
+
     root->left->left = createNode(1);
     root->left->right = createNode(3);
     root->right->right = createNode(7);
     root->right->left = createNode(5);
-// Altura de BST
-    int height = getHeight(root);
-    std::cout << "La altura del BST es: " << height << std::endl;
+
 // Tipos de recorridos en un BST
     int choice;
     std::cout << "Elije un tipo de recorrido (1-4): ";
     std::cin >> choice;
     performTraversal(root, choice);
+// Altura de BST
+int height = getHeight(root);
+std::cout << "La altura del BST es: " << height << std::endl;
 // Ancestros de un nodo
 int target = 7;
   std::vector<int> ancestors;
     if (findAncestors(root, target, ancestors)) {
-        std::cout << "Ancestros de " << target << ": ";
+        std::cout << "Datos de los nodos ancestros de " << target << ": ";
         for (int i = 0; i < ancestors.size(); i++) {
-            std::cout << ancestors[i] << ", ";
+            std::cout << ancestors[i] << " ";
         }
         std::cout << std::endl;
     } else {
