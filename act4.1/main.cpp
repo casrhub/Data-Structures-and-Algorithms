@@ -10,8 +10,8 @@ void loadGraph(int n, vector<vector<int>>& adjacencyMatrix, vector<list<int>>& a
     adjacencyMatrix.assign(n, vector<int>(n, 0));
 
     int i, j;
-    while (inputFile >> i >> j) {
-        adjacencyMatrix[i][j] = 1;
+    while (inputFile >> i >> j) { 
+        adjacencyMatrix[i][j] = 1; // matrix[][] matiz 2d  
         adjacencyMatrix[j][i] = 1;
 
         adjacencyList[i].push_back(j);
