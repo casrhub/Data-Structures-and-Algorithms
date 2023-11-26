@@ -1,0 +1,15 @@
+6
+Hermosillo Nogales 
+Nogales Yugoslavia 
+Yugoslavia SanPedro 
+SanPedro Hermosillo
+Hermosillo ParqueMadero
+ParqueMadero Culiacan
+4
+Hermosillo 2
+Culiacan 3
+ParqueMadero 1
+SanPedro 2
+
+
+
