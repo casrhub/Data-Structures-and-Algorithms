@@ -1,4 +1,5 @@
 
+#pragma once
 #include <list>
 #include <vector>
 #include <string>
@@ -11,6 +12,7 @@ class Ht{
 
     public:
     Ht();
+    int salary(std::string jobDescription);
     void insert (std::string key,int value);
     
 };
