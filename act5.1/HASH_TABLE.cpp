@@ -12,7 +12,7 @@ int HASH_TABLE::hash_tech(int key) {
 void HASH_TABLE::disp_tab() { 
     for (const auto& lista : table) {
             if(lista.empty()){
-                std::cout<<"NULL"<<std::endl;
+                std::cout<<"null"<<std::endl;
             }
             else{
                 for (const auto& elemento : lista) {
