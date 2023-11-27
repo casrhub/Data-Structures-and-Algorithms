@@ -1,7 +1,7 @@
 CXX = g++            # C++ compiler
 CXXFLAGS = -std=c++11 # Compilation flags
-SRC = act5.1.cpp        # Replace with your C++ source file
-OUTPUT = act5.1         # Replace with your desired executable name
+SRC = ACT_5.1_HASHING.cpp        # Replace with your C++ source file
+OUTPUT = ACT_5.1_HASHING         # Replace with your desired executable name
 
 all: $(OUTPUT)
 
