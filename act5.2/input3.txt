@@ -1,0 +1,12 @@
+6 3
+marketing 85000
+branding 70000
+strategy 95000
+campaign 120000
+digital 100000
+communication 80000
+we are hiring a marketing specialist with expertise in branding,
+the role involves planning and executing campaigns with a focus
+on digital channels.
+.
+we are hiring for a data science role, we provide nice opportunities 

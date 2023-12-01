@@ -10,16 +10,16 @@ Ht::Ht(){
 // algoritmo hash para pasar de string a código
 // el número primo ayuda a evitar colisiones
 int Ht::hash(std::string key){
-    int hashValue = 0;
+    int hashValue = 0; // lista de listas 
     for (char c : key){
-        hashValue = (hashValue * 31 + c) % prime;
+        hashValue = (hashValue * 31 + c) % prime; // n primo grande 
     }
     return hashValue;
 }
 
 // Insertar key, value pair OJO: hasheando el key (str)
 void Ht::insert(std::string key, int value){
-    int index = hash(key);
+    int index = hash(key);// insertamos en lindex de llave ya con codigo hash 
     table[index].push_back(std::make_pair(key,value));
     
 }
